@@ -1,10 +1,10 @@
 import unittest
-from math_quiz import function_A, function_B, function_C
+from math_quiz import randomInt, randMathOperation, math_quiz
 
 
 class TestMathGame(unittest.TestCase):
 
-    def test_function_A(self):
+    def test_randomInt(self):
         # Test if random numbers generated are within the specified range
         min_val = 1
         max_val = 10
@@ -12,11 +12,11 @@ class TestMathGame(unittest.TestCase):
             rand_num = function_A(min_val, max_val)
             self.assertTrue(min_val <= rand_num <= max_val)
 
-    def test_function_B(self):
+    def test_randMathOperation(self):
         # TODO
         pass
 
-    def test_function_C(self):
+    def test_math_quiz(self):
             test_cases = [
                 (5, 2, '+', '5 + 2', 7),
                 ''' TODO add more test cases here '''
