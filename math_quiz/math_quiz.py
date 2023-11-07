@@ -1,6 +1,5 @@
 import random
 
-
 def randomInt(min, max):
     """
     Chooses a random integer between the given borders.
@@ -17,12 +16,14 @@ def randomInt(min, max):
     """
     
     try:  
-        if not (isinstance(min, int) and isinstance(max, int)): #check for errors
+        #check for errors
+        if not (isinstance(min, int) and isinstance(max, int)): 
             print("")
             raise ValueError("Input values must be integers")
         return random.randint(min, max)                         #returns random int
     
-    except ValueError as error:                                 #error correction
+    #error correction
+    except ValueError as error:                                 
         print(f"ERROR: {error}")
         print("USE ROUNDED VALUES")
         result = random.randint(round(min),round(max))
@@ -39,12 +40,12 @@ def randMathOperation():
     Example:
         randMathOperation() 
     """
+
     try:
         return random.choice(['+', '-', '*'])
     except IndexError:
         return "Error: The list of operations is empty."
     
-    return random.choice(['+', '-', '*'])
 
 
 def calc(n1, n2, operation):
@@ -63,11 +64,12 @@ def calc(n1, n2, operation):
         calc(3,4,'+') 
     
     """
-    p = f"{n1} {operation} {n2}"
+
+    problem = f"{n1} {operation} {n2}"
     if operation == '+': answer = n1 + n2
     elif operation == '-': answer = n1 - n2
     else: answer = n1 * n2
-    return p, answer
+    return problem, answer
 
 def math_quiz():
     """
@@ -81,10 +83,12 @@ def math_quiz():
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
     
-    try:                                                     #error checking
+    #error checking if t_q is an integer
+    try:                                                     
         if not isinstance(t_q, int):
             raise ValueError("t_q has to be an integer.")
-    except ValueError as error:                              #error correction
+    #error correction if its no integer
+    except ValueError as error:                              
         print(f"Error: {error}")
         
     for _ in range(t_q):
