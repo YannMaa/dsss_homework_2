@@ -1,5 +1,7 @@
 import random
 
+TOTAL_QUESTIONS = 3
+
 def randomInt(min, max):
     """
     Chooses a random integer between the given borders.
@@ -77,21 +79,19 @@ def math_quiz():
     """
     
     score = 0
-#     t_q = 3.14159265359
-    t_q = 3
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
     
-    #error checking if t_q is an integer
+    #error checking if TOTAL_QUESTIONS is an integer
     try:                                                     
-        if not isinstance(t_q, int):
-            raise ValueError("t_q has to be an integer.")
+        if not isinstance(TOTAL_QUESTIONS, int):
+            raise ValueError("TOTAL_QUESTIONS has to be an integer.")
     #error correction if its no integer
     except ValueError as error:                              
         print(f"Error: {error}")
         
-    for _ in range(t_q):
+    for _ in range(TOTAL_QUESTIONS):
         n1 = randomInt(1, 10); n2 = randomInt(1, 5); operation = randMathOperation()
         
 
@@ -106,7 +106,7 @@ def math_quiz():
         else:
             print(f"Wrong answer. The correct answer is {ANSWER}.")
 
-    print(f"\nGame over! Your score is: {score}/{t_q}")
+    print(f"\nGame over! Your score is: {score}/{TOTAL_QUESTIONS}")
 
 if __name__ == "__main__":
     math_quiz()
